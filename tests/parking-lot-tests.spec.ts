@@ -8,30 +8,30 @@ test.describe('Parking lot tests', () => {
     ///// NOTE: This approach for testing is semi-deterministic - it is just for demo purposes
 
     // while loop ensures at least 1 small parking lot
-    let numberOfSmallSizeLots = 0
+    let numberOfSmallSizeSpots = 0
     let parkingLot = undefined
 
-    while (numberOfSmallSizeLots === 0) {
+    while (numberOfSmallSizeSpots === 0) {
       parkingLot = new ParkingLot(5)
-      numberOfSmallSizeLots = parkingLot.getNumberOfSpots('small', true)
+      numberOfSmallSizeSpots = parkingLot.getNumberOfSpots('small', true)
     }
 
-    console.log(`Testing with small size lots: ${numberOfSmallSizeLots}`)
+    console.log(`Testing with small size lots: ${numberOfSmallSizeSpots}`)
 
-    for (let i = 0; i < numberOfSmallSizeLots; i++) {
+    for (let i = 0; i < numberOfSmallSizeSpots; i++) {
       const smallVehicle: Vehicle = {
         size: 'small',
         plateNumber: `small_${i}`,
       }
 
-      const parkingLotId = parkingLot!.allocateSpotToVehicle(smallVehicle)
-      expect(parkingLotId).toBeDefined()
+      const parkingSpotId = parkingLot!.allocateSpotToVehicle(smallVehicle)
+      expect(parkingSpotId).toBeDefined()
     }
 
     // negative case
     const smallVehicle2: Vehicle = {
       size: 'small',
-      plateNumber: `small_${numberOfSmallSizeLots + 1}`,
+      plateNumber: `small_${numberOfSmallSizeSpots + 1}`,
     }
 
     expect(() => {
