@@ -5,14 +5,14 @@ import type { Vehicle } from '../src/vehicle.js'
 test.describe('Parking lot tests', () => {
   test('1. Fill only small size lots', async () => {
 
-    ///// NOTE: This approach for testing is not detemrministic - it is just for demo purposes
+    ///// NOTE: This approach for testing is not semi-deterministic - it is just for demo purposes
 
     // while loop ensures at least 1 small parking lot
     let numberOfSmallSizeLots = 0
     let parkingLot = undefined
 
     while (numberOfSmallSizeLots === 0) {
-      let parkingLot = new ParkingLot(5)
+      parkingLot = new ParkingLot(5)
       numberOfSmallSizeLots = parkingLot.getNumberOfSpots('small', true)
     }
 
