@@ -1,0 +1,16 @@
+{
+  "name": "parking-lot",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "yarn@1.22.22",
+  "description": "parking lot task",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "typescript": "^5.9.3"
+  }
+}
